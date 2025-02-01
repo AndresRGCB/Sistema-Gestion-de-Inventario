@@ -69,7 +69,7 @@ http://localhost:8000/docs
 **Endpoint:** `/products/{id}`  
 **Método:** `DELETE`
 
-### 6. Consultar Inventario de una Tienda
+### 6. Consultar Inventario de un Objeto Dentro de Todas las Tiendas
 
 **Endpoint:** `/stores/{id}/inventory`  
 **Método:** `GET`
@@ -188,7 +188,17 @@ docker exec -it inventory_api pytest -v load_tests/
 
 ---
 
-Se han realizado ajustes finales para mejorar la claridad, corregir detalles gramaticales y garantizar que la información sea consistente y bien estructurada.
+## Colección de Postman
+
+La colección de Postman para probar la API se encuentra disponible en la carpeta `docs/` del repositorio. Para utilizarla:
+
+1. Abre Postman.
+2. Ve a **File > Import**.
+3. Selecciona el archivo `docs/Inventario API.postman_collection.json`.
+4. Una vez importada, puedes probar los endpoints directamente desde Postman.
+
+Esto facilita la validación y prueba de la API sin necesidad de escribir manualmente las peticiones.
+
 
 
 
