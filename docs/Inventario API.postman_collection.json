@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "01d1d7d3-a979-46e4-acc4-d4e530f4d869",
+		"name": "Inventario API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41693809"
+	},
+	"item": [
+		{
+			"name": "products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/products/",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Electrónica",
+							"disabled": true
+						},
+						{
+							"key": "min_price",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "max_price",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limt",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "min_stock",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "max_stock",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products/{id}",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}api/products/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Laptop Dell XPS\",\r\n    \"description\": \"Laptop potente con Intel i7\",\r\n    \"category\": \"Laptops\",\r\n    \"price\": 1599.99,\r\n    \"sku\": \"LAPTOP-DELL-XPS-15\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/products/",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products/id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Laptop Dell XPS 2024\",\r\n    \"description\": \"Nueva versión con procesador Intel i9\",\r\n    \"category\": \"Laptops\",\r\n    \"price\": 1699.99,\r\n    \"sku\": \"LAPTOP-DELL-XPS-15-2024\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/products/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stores/id/inventory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/stores/{{id}}/inventory",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"stores",
+						"{{id}}",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inventory/alerts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/inventory/alerts",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"inventory",
+						"alerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inventory/transfer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_id\": 101,\r\n    \"source_store_id\": \"1\",\r\n    \"target_store_id\": \"2\",\r\n    \"quantity\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/inventory/transfer",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"inventory",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products/id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/products/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "1",
+			"type": "default"
+		}
+	]
+}
