@@ -32,19 +32,11 @@ docker-compose up --build -d
 
 ### 4. Validar el Funcionamiento de la API
 
-La documentación interactiva generada automáticamente mediante OpenAPI/Swagger se encuentra disponible en:
+La documentación interactiva OpenAPI/Swagger se encuentra disponible en:
 
 ```
 http://localhost:8000/docs
 ```
-
-Para visualizar la documentación alternativa en formato ReDoc:
-
-```
-http://localhost:8000/redoc
-```
-
-Para más detalles sobre los endpoints y su uso, consulta la documentación generada en la ruta `/docs`.
 
 ---
 
